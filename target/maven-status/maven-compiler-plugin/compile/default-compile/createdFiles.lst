@@ -1,0 +1,6 @@
+com\myIt\pojo\User.class
+com\myIt\action\RegisterAction.class
+com\myIt\pojo\House.class
+com\myIt\action\IndexAction.class
+com\myIt\action\HouseAction.class
+com\myIt\pojo\Street.class

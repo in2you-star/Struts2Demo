@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <constant name="struts.enable.DynamicMethodInvacation" value="true"></constant>
+    <package name="default" namespace="/" extends="struts-default">
+        <!--<action name="register" class="com.myIt.action.RegisterAction" method="register">
+            <result>
+                /registerSuccess.jsp
+            </result>
+            <result name="input">
+                /register.jsp
+            </result>
+        </action>-->
+        <action name="user*" class="com.myIt.action.RegisterAction" method="{1}">
+            <result type="redirect">
+                /{1}Success.jsp
+            </result>
+            <result name="input" type="dispatcher">
+                /{1}.jsp
+            </result>
+            <result name="loginSuccess" type="redirectAction">
+                index
+            </result>
+        </action>
+        <action name="index" class="com.myIt.action.IndexAction">
+            <result>
+                /index.jsp
+            </result>
+        </action>
+        <action name="house" class="com.myIt.action.HouseAction">
+            <result>
+                /houseInfo.jsp
+            </result>
+        </action>
+    </package>
+</struts>
